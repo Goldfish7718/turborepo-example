@@ -1,0 +1,17 @@
+{
+  "name": "@packages/schemas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/schema.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@repo/typescript-config": "workspace:^",
+    "zod": "^3.24.1"
+  }
+}
