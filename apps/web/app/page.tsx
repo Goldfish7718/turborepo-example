@@ -1,9 +1,9 @@
 "use client";
 
-import { exampleSchema, ExampleSchemaType } from "@packages/schemas";
+import { exampleSchema, ExampleSchemaType } from "@packages/schemas/example";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
+import { useApi } from "@packages/api-hooks";
 
 function Page() {
   const {
@@ -12,17 +12,7 @@ function Page() {
     formState: { errors },
   } = useForm<ExampleSchemaType>({ resolver: zodResolver(exampleSchema) });
 
-  const submit = async (data: ExampleSchemaType) => {
-    try {
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/example`,
-        data
-      );
-      console.log(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { submit } = useApi();
 
   return (
     <>

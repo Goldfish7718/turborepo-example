@@ -1,0 +1,19 @@
+{
+  "name": "@packages/api-hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/useApi.js",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@packages/schemas": "workspace:^",
+    "@repo/typescript-config": "workspace:^",
+    "axios": "^1.7.9",
+    "react": "^19.0.0"
+  }
+}
