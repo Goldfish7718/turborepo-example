@@ -2,7 +2,7 @@
   "name": "@packages/schemas",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/schema.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch"
@@ -13,5 +13,15 @@
   "dependencies": {
     "@repo/typescript-config": "workspace:^",
     "zod": "^3.24.1"
+  },
+  "exports": {
+    "./example": {
+      "default": "./dist/example/example.js",
+      "types": "./dist/example/example.d.ts"
+    },
+    "./book": {
+      "default": "./dist/book/book.js",
+      "types": "./dist/books/book.d.ts"
+    }
   }
 }

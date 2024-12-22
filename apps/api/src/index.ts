@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { ExampleSchemaType, exampleSchema } from "@packages/schemas";
+import { exampleSchema, ExampleSchemaType } from "@packages/schemas/example";
 import { ZodError } from "zod";
 
 const app = express();
@@ -9,12 +9,12 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Me is server");
+  res.send("this is server");
 });
 
 app.post("/example", async (req, res): Promise<any> => {
   try {
-    const data = exampleSchema.parse(req.body);
+    const data: ExampleSchemaType = exampleSchema.parse(req.body);
     res.send("Valid");
   } catch (error) {
     if (error instanceof ZodError) {
